@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* المقاطع */
+  .profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 10%;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .profile-section.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .text-content {
+    flex: 1;
+    min-width: 280px;
+  }
+  
+  .image-content {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  
+  /* النص */
+  .text-content h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .text-content h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .text-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .text-content h3 span {
+    color: #007bff;
+  }
+  
+  .text-content p {
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .btn-blue {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .btn-outline {
+    background: transparent;
+    border: 2px solid #333;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  /* الأيقونات */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    color: #333;
+    font-size: 20px;
+    transition: 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #007bff;
+  }
+  
+  /* الأنيميشن */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeIn 1.2s ease forwards;
+  }
+  
+  .from-left {
+    transform: translateX(-60px);
+  }
+  
+  .from-right {
+    transform: translateX(60px);
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* الشاشات الصغيرة */
+  @media (max-width: 768px) {
+    .profile-section {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .profile-section.reverse {
+      flex-direction: column;
+    }
+  
+    .image-content, .text-content {
+      width: 100%;
+    }
+  
+    .buttons {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  
+    .social-icons {
+      justify-content: center;
+      margin-top: 10px;
+    }
+  }

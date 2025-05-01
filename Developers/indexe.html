@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Design</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+
+    body {
+      background-color: #f4f6fc;
+      padding: 20px;
+    }
+
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 50px;
+      animation: fadeInUp 1s ease;
+      /* align-items: flex-start; */
+    }
+
+    .section.reverse {
+      flex-direction: row-reverse;
+    }
+    .section.reverse .text{
+        padding-left: 10%; 
+    }
+
+    .text {
+      flex: 1;
+      min-width: 280px;
+      padding: 40px 20px; 
+      order: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      /* line-height: 1.8; */
+      overflow-wrap: break-word;
+    }
+
+    .image {
+      flex: 1;
+      min-width: 280px;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      order: 1;
+      position: relative;
+    }
+
+    .image img {
+        width: 450px;
+      /* max-width: 300px; */
+      border-radius: 10px;
+      z-index: 1;
+    }
+
+    /* حذف الخلفية اللي ورا الصور */
+    .image::before {
+      display: none;
+    }
+
+    .text h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .text h1 span {
+      color: #ff4c29;
+    }
+
+    .text h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .text p {
+      font-size: 1em;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background-color: #ff4c29;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-bottom: 15px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #e03e1d;
+    }
+
+    .social {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    .social img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      transition: transform 0.3s;
+    }
+
+    .social img:hover {
+      transform: scale(1.2);
+    }
+
+    /* للجوال */
+    @media (max-width: 768px) {
+      .section, .section.reverse {
+        flex-direction: column;
+      }
+
+      .text, .image {
+        order: unset;
+        text-align: center;
+        align-items: center;
+        padding: 20px 35px;
+        max-width: 100%;
+        margin-bottom: 0px;
+        padding-top: 0px;
+      }
+
+      .social {
+        justify-content: center;
+        
+      }
+    }
+
+    /* تأثير الدخول */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+.custom-footer {
+  background-color: #ffffff; /* لون مشابه للصورة */
+  color: #e03e1d;
+  padding: 20px;
+  font-size: 14px;
+  direction: ltr;
+  font-family: sans-serif;
+}
+
+.footer-line {
+  border-top: 1px solid black;
+  margin-bottom: 15px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+}
+
+.footer-right a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #e03e1d;
+}
+
+.footer-right a:hover {
+  text-decoration: underline;
+}
+.footer-center{
+    color: #000000;
+    font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+
+  <!-- أول مقطع -->
+  <div class="section">
+    <div class="image">
+      <img src="images/m1.png" alt="Profile Image 1">
+    </div>
+    <div class="text">
+      <h1>I am <span>Mohammed Tawfiq</span></h1>
+      <h2>طالب –  تقنية معلومات – المستوى الثالث</h2>
+      <p>     
+        أسعى إلى توظيف التقنية لخدمة الإبداع والتجربة الإنسانية.
+        قمت بتطوير مشروع تفاعلي لطلاب التصميم الداخلي عبارة عن مجسم لقطعة أثرية يمنية يتفاعل صوتياً، ويقدم معلومات تعريفية عند التحدث إليه.
+        كما أنجزت موقعاً تاريخياً يعمل بشكل كامل بدون إنترنت، يتيح للمستخدمين الوصول إلى محتواه عن طريق مسح باركود باستخدام كاميرا الهاتف.
+        أؤمن بأن التكنولوجيا أداة قوية لإحياء الثقافة وتقديم المعرفة بشكل مبتكر.</p>
+      <button class="btn">Download CV</button>
+      <div class="social">
+        <img src="icons/1.png" alt="Facebook">
+        <img src="icons/2.png" alt="Behance">
+        <img src="icons/3.png" alt="LinkedIn">
+      </div>
+    </div>
+  </div>
+
+  <!-- ثاني مقطع (معكوس) -->
+  <div class="section reverse">
+    <div class="image">
+      <img src="images/m2.png" alt="Profile Image 2">
+    </div>
+    <div class="text">
+      <h1>I am <span>Mohammed Mashrah</span></h1>
+      <h2>خريج ديكور - المعهد التركي اليمني</h2>
+      <p>
+        في مشروع التخرج، تم العمل على إنشاء وتصميم متحف أثري بطابع عصري يسلط الضوء على أبرز الحضارات اليمنية والملوك الحاكمين آنذاك.
+        ركز المشروع على إبراز أهم القطع الأثرية المتوفرة والمفقودة، مع دمج تقنيات الذكاء الاصطناعي لزيادة التفاعل وقابلية التطوير، بما يواكب عصر الـAI ويحافظ على الهوية التاريخية اليمنية.
+        
+        بجهود العمل الجماعي، تمكنا من تحقيق أفضل النتائج باستخدام الموارد المتاحة.
+        رحلة عبر الزمن — أصالة تتواصل عبر الأجيال.
+        </p>
+      <button class="btn">Download CV</button>
+      <div class="social">
+        <img src="icons/1.png" alt="Facebook">
+        <img src="icons/2.png" alt="Behance">
+        <img src="icons/3.png" alt="LinkedIn">
+      </div>
+    </div>
+  </div>
+    <!-- أول مقطع -->
+  <div class="section">
+    <div class="image">
+      <img src="images/m3.png" alt="Profile Image 1">
+    </div>
+    <div class="text">
+      <h1>I am <span>Akram Al-Basara</span></h1>
+      <h2>خريج ديكور - المعهد التركي اليمني</h2>
+      <P>قدّم مجهوداً مميزاً في الجانب الهندسي والتصميمي للمشروع، حيث عمل على إعداد المجسمات بدقة، وتنفيذ عناصر الديكور بما يتناسب مع الطابع العام للمتحف.
+        ساهم في تحقيق التوازن بين الجمال البصري والوظيفة التعليمية، وكان له دور بارز في إظهار المشروع بشكل متكامل ومتناغم مع فكرة المتحف التفاعلي.</P>
+      <button class="btn">Download CV</button>
+      <div class="social">
+        <img src="icons/1.png" alt="Facebook">
+        <img src="icons/2.png" alt="Behance">
+        <img src="icons/3.png" alt="LinkedIn">
+      </div>
+    </div>
+  </div>
+
+  <!-- ثاني مقطع (معكوس) -->
+  <div class="section reverse">
+    <div class="image">
+      <img src="images/m4.png" alt="Profile Image 2">
+    </div>
+    <div class="text">
+      <h1>I am <span>Mohammed Awad</span></h1>
+      <h2>خريج ديكور - المعهد التركي اليمني</h2>
+      <P>أسهم في تطوير مشروع تخرج متميز يهدف إلى إعادة تقديم التراث اليمني بطريقة تجمع بين الأصالة والابتكار. شارك في توظيف تقنيات حديثة لتعزيز عرض 
+        المقتنيات الأثرية بطريقة ذكية، تتيح تفاعل الجمهور مع معروضات المتحف بأسلوب عصري ومبتكر.</P>
+      <button class="btn">Download CV</button>
+      <div class="social">
+        <img src="icons/1.png" alt="Facebook">
+        <img src="icons/2.png" alt="Behance">
+        <img src="icons/3.png" alt="LinkedIn">
+      </div>
+    </div>
+  </div>
+    <!-- أول مقطع -->
+    <div class="section">
+      <div class="image">
+        <img src="images/m5.png" alt="Profile Image 1">
+      </div>
+      <div class="text">
+        <h1>I am <span>Jiyad Al-Hanbasi</span></h1>
+        <h2>خريج ديكور - المعهد التركي اليمني</h2>
+        <P>لعب دورًا متميزًا في تصميم وإنشاء متحف أثري بتقنيات تكنولوجية حديثة، دمج من خلالها بين العناصر الجمالية للتراث اليمني والذكاء الاصطناعي. عمل على تقديم تجربة 
+          متحفية تفاعلية تعكس روح الحضارة وتواكب متطلبات العصر الرقمي.
+        </P>
+        <button class="btn">Download CV</button>
+        <div class="social">
+          <img src="icons/1.png" alt="Facebook">
+          <img src="icons/2.png" alt="Behance">
+          <img src="icons/3.png" alt="LinkedIn">
+        </div>
+      </div>
+    </div>
+  
+    <!-- ثاني مقطع (معكوس) -->
+    <div class="section reverse">
+      <div class="image">
+        <img src="images/m6.png" alt="Profile Image 2">
+      </div>
+      <div class="text">
+        <h1>I am <span>Engineer Ashraf Al-Najjar</span></h1>
+        <h2>رئيس قسم الديكور والسيراميك - المعهد اليمني التركي</h2>
+       <p>مختص في مجال النمذجة والتصميم ثلاثي الأبعاد، يتميز بأسلوب تدريسي اح
+        ترافي يجمع بين الدقة التقنية والرؤية الإبداعية. له دور بارز في تأهيل كوادر تصميمية قادرة على مواكبة متطلبات سوق العمل ومجال التصميم المعماري والداخلي.</p>
+        <button class="btn">Download CV</button>
+        <div class="social">
+          <img src="icons/1.png" alt="Facebook">
+          <img src="icons/2.png" alt="Behance">
+          <img src="icons/3.png" alt="LinkedIn">
+        </div>
+      </div>
+    </div>
+        <!-- أول مقطع -->
+        <div class="section">
+          <div class="image">
+            <img src="images/m7.png" alt="Profile Image 1">
+          </div>
+          <div class="text">
+            <h1>I am <span>Mohammed Al-Jasmri</span></h1>
+            <h2>خريج ديكور - المعهد التركي اليمني</h2>
+            <P>شارك ضمن فريق الإبداع في إنشاء متحف أثري حديث، مع التركيز على دمج تقنيات الذكاء الاصطناعي لإحياء تفاصيل الحضارات اليمنية. ساهم في تطوير مسارات ال
+              عرض وإثراء التجربة البصرية للزوار بطريقة تفاعلية ديناميكية.
+            </P>
+            <button class="btn">Download CV</button>
+            <div class="social">
+              <img src="icons/1.png" alt="Facebook">
+              <img src="icons/2.png" alt="Behance">
+              <img src="icons/3.png" alt="LinkedIn">
+            </div>
+          </div>
+        </div>
+      
+        <!-- ثاني مقطع (معكوس) -->
+        <div class="section reverse">
+          <div class="image">
+            <img src="images/m8.png" alt="Profile Image 2">
+          </div>
+          <div class="text">
+            <h1>I am <span>Mohammed Al-Qahm</span></h1>
+            <h2>خريج ديكور - المعهد التركي اليمني</h2>
+            <p>كان له دور محوري في تصميم مشروع متحف أثري معاصر، يجمع بين التصميم الجمالي والتكنولوجيا الذكية. ركز على عرض القطع الأثرية والحضارات المنسية بطريقة حديثة وتفاع
+              لية، مساهمًا في ربط الأجيال الجديدة بتاريخ اليمن الغني.
+            </p>
+            <button class="btn">Download CV</button>
+            <div class="social">
+              <img src="icons/1.png" alt="Facebook">
+              <img src="icons/2.png" alt="Behance">
+              <img src="icons/3.png" alt="LinkedIn">
+            </div>
+          </div>
+        </div>
+    <footer class="custom-footer">
+      <div class="footer-line"></div>
+      <div class="footer-content">
+        <div class="footer-left">© جميع الحقوق محفوظة 2025</div>
+        <div class="footer-center">MOHAMMED TAWFIQ</div>
+        <div class="footer-right">
+          <a href="#">الخصوصية</a>
+          <a href="#">إخلاء المسؤولية</a>
+          <a href="#">اتصل بنا</a>
+        </div>
+      </div>
+    </footer>
+
+</body>
+</html>
